@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import numpy as np
 
-from simplex_functions import (
+from src.simplex_functions import (
     _estandarizar_problema_dos_fases,
     _fmt,
     _pivotear,
@@ -11,7 +11,7 @@ from simplex_functions import (
     _eliminar_artificiales_tabla,
     )
 
-from utilities import _set_window_icon
+from src.utilities import _set_window_icon
 
 # Ventana principal del método simplex de 2 fases con tablas paso a paso
 class TwoPhaseSimplexWindow(tk.Toplevel):

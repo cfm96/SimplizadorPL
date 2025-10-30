@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import numpy as np
-from utilities import (_set_window_icon,   _dbg)
-from simplex_functions import (
-    _fmt,
+from src.utilities import (_set_window_icon,   _dbg)
+from src.simplex_functions import (
+    _fmt
     )
 
 # Ventana de demostración del simplex canónico

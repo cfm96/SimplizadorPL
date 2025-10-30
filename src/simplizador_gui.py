@@ -1,16 +1,16 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-from simplex_functions import (
+from src.simplex_functions import (
     estandarizar_problema,
     resolver_dos_fases,
     _estandarizar_problema_dos_fases,
     _fmt
     )
 
-from utilities import _set_window_icon, _resource_path
+from src.utilities import _set_window_icon, _resource_path
 
-from two_phase_gui import TwoPhaseSimplexWindow
+from src.two_phase_gui import TwoPhaseSimplexWindow
 
 # Ventana principal de la aplicación
 class SimplizadorGUI(tk.Tk):

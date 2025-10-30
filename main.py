@@ -1,6 +1,6 @@
 import sys
 
-from simplizador_gui import SimplizadorGUI
+from src.simplizador_gui import SimplizadorGUI
 
 def _set_windows_app_id(app_id: str = "UniLP.SimplizadorPL"):
     """Fija un AppUserModelID para que Windows use el icono del ejecutable en la barra de tareas.
