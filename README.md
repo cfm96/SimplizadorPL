@@ -7,7 +7,7 @@ Aplicación en Python con interfaz gráfica (tkinter) para:
 - Mostrar el problema estandarizado (igualdades, variables no negativas) evitando notación científica.
 - Resolver con el método Simplex de 2 Fases paso a paso, mostrando todas las tablas (Fase I y Fase II), con una vista previa didáctica de la entrada a Fase II.
 
-El archivo principal es `simplizador_simplex.py`.
+El archivo principal es `main.py`.
 
 ## Requisitos
 - Python 3.8+.
@@ -21,10 +21,10 @@ Desde PowerShell (Windows):
 # (Opcional) Activar tu entorno virtual si lo usas
 # .venv\Scripts\Activate.ps1
 
-python .\simplizador_simplex.py
+python .\main.py
 ```
 
-Se abrirá la ventana "Simplizador de P.L.".
+Se abrirá la ventana "Simplizador".
 
 ## Uso rápido (GUI)
 1. Selecciona el tipo de problema: `max` o `min`.
