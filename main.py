@@ -1,11 +1,6 @@
-import tkinter as tk
-from tkinter import ttk, messagebox
-import os, sys
-import numpy as np
+import sys
 
 from simplizador_gui import SimplizadorGUI
-from simplex_window import SimplexWindow
-from two_phase_gui import TwoPhaseSimplexWindow
 
 def _set_windows_app_id(app_id: str = "UniLP.SimplizadorPL"):
     """Fija un AppUserModelID para que Windows use el icono del ejecutable en la barra de tareas.

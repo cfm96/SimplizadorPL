@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-import os, sys
 import numpy as np
 
 from simplex_functions import (
