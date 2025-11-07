@@ -16,15 +16,15 @@ from src.two_phase_gui import TwoPhaseSimplexWindow
 class SimplizadorGUI(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Simplizador")
+        self.title("Simplificador")
         self.geometry("800x680")
         _set_window_icon(self)
 
         ttk.Label(
             self,
-            text="SIMPLIZADOR\n\nIngrese los datos de su Problema de Programación Lineal",
+            text="SIMPLIZADOR",
             font=("Helvetica", 14, "bold"),
-            foreground="blue",
+            foreground="gray",
             justify="center"
         ).pack(pady=15)
 
@@ -32,7 +32,11 @@ class SimplizadorGUI(tk.Tk):
         self.n_var = tk.IntVar()
         self.m_var = tk.IntVar()
 
-        frm_top = ttk.Frame(self)
+        # labelframe para selección de tipo, n y m
+        config_frame = ttk.LabelFrame(self, text="Configuración problema de P.L.", padding=10)
+        config_frame.pack(padx=10, pady=10, fill="x")
+
+        frm_top = ttk.Frame(config_frame)
         frm_top.pack(pady=10)
         ttk.Label(frm_top, text="Clasificación:").grid(row=0, column=0, padx=5)
         ttk.Combobox(frm_top, textvariable=self.tipo_var,
@@ -43,19 +47,23 @@ class SimplizadorGUI(tk.Tk):
         ttk.Entry(frm_top, textvariable=self.m_var, width=5).grid(row=0, column=5, padx=5)
 
         # Etiquetas informativas sobre los límites
-        frm_limits = ttk.Frame(self)
+        frm_limits = ttk.Frame(config_frame)
         frm_limits.pack(pady=(0, 10))
         ttk.Label(frm_limits, text="Límites máximos: 50 variables y 50 restricciones", 
                  font=("Arial", 9), foreground="gray").pack()
 
-        ttk.Button(self, text="Continuar", command=self.crear_campos).pack(pady=10)
+        ttk.Button(config_frame, text="Continuar", command=self.crear_campos).pack(pady=10)
+
+        # Labelframe para ingreso de datos del problema
+        datos_frame = ttk.LabelFrame(self, text="Ingreso de datos del problema", padding=10)
+        datos_frame.pack(fill="both", expand=True, padx=10, pady=5)
 
         # Crear el área con scrollbars
-        self.canvas_frame = ttk.Frame(self)
+        self.canvas_frame = ttk.Frame(datos_frame)
         self.canvas_frame.pack(fill="both", expand=True, padx=10, pady=5)
 
         # Canvas para el contenido con scroll
-        self.canvas = tk.Canvas(self.canvas_frame, bg="white")
+        self.canvas = tk.Canvas(self.canvas_frame, bg=self.cget('bg'))
         
         # Scrollbars vertical y horizontal
         self.v_scrollbar = ttk.Scrollbar(self.canvas_frame, orient="vertical", command=self.canvas.yview)
